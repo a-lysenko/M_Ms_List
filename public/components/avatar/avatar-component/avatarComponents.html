@@ -1,0 +1,51 @@
+<h4 class="component-title">Eyes:</h4>
+<ul class="components-list">
+    <li class="component-item"
+        ng-repeat="eyeItem in avatarComponentsCtrl.eyes track by $index">
+
+        <img class="component-item__image"
+             src="{{eyeItem.url}}" alt=""
+             ng-click="avatarComponentsCtrl.addToCanvas('eyes', $index)"/>
+        <span>{{eyeItem.name}}</span>
+
+    </li>
+</ul>
+
+<h4 class="component-title">Hair:</h4>
+<ul class="components-list">
+    <li class="component-item"
+        ng-repeat="hairItem in avatarComponentsCtrl.hair track by $index">
+
+        <img class="component-item__image"
+             src="{{hairItem.url}}" alt=""
+             ng-click="avatarComponentsCtrl.addToCanvas('hair', $index)"/>
+        <span>{{hairItem.name}}</span>
+
+    </li>
+</ul>
+
+<h4 class="component-title">Nose:</h4>
+<ul class="components-list">
+    <li class="component-item"
+        ng-repeat="noseItem in avatarComponentsCtrl.nose track by $index">
+
+        <img class="component-item__image"
+             src="{{noseItem.url}}" alt=""
+             ng-click="avatarComponentsCtrl.addToCanvas('nose', $index)"/>
+        <span>{{noseItem.name}}</span>
+
+    </li>
+</ul>
+
+<h4 class="component-title">Mouth:</h4>
+<ul class="components-list">
+    <li class="component-item"
+        ng-repeat="mouthItem in avatarComponentsCtrl.mouth track by $index">
+
+        <img class="component-item__image"
+             src="{{mouthItem.url}}" alt=""
+             ng-click="avatarComponentsCtrl.addToCanvas('mouth', $index)"/>
+        <span>{{mouthItem.name}}</span>
+
+    </li>
+</ul>

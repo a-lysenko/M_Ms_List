@@ -1,0 +1,18 @@
+<div class="jumbotron text-center">
+
+    <person person-template-type="details"
+            person-obj-type="mentor"
+            person-obj="mentor"
+            >
+        <h4 class="text-left">Asigned mentees:</h4>
+
+        <person class="col-sm-7"
+                ng-repeat="mentee in mentees"
+                ng-if="isAssignedToMentor(mentee)"
+                person-obj-type="mentee"
+                person-obj="mentee"
+                m-link-group="mentees"
+                >
+        </person>
+    </person>
+</div>

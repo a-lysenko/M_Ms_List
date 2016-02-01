@@ -1,0 +1,25 @@
+{
+  "name": "M_M_List_on_MEAN_stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "node node_modules/karma/bin/karma start karma.conf.js"
+  },
+  "author": "Aleksey Lysenko",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.13.1",
+    "bower": "^1.4.1",
+    "express": "^4.13.0",
+    "method-override": "^2.3.3",
+    "mongoose": "^4.0.6",
+    "morgan": "^1.6.0",
+    "nodemon": "^1.3.7",
+    "karma": "^0.13.6",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-coverage": "^0.4.2",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-jasmine": "^0.1.5"
+  }
+}

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+
+    <title>M&Ms list</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/angularjs-toaster/toaster.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- custom styles -->
+
+    <!-- JS -->
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <!--<script src="libs/bootstrap/dist/js/bootstrap.js"></script>-->
+
+    <!-- ANGULAR -->
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+
+    <script src="libs/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+
+    <script src="libs/angular-animate/angular-animate.js"></script>
+    <script src="libs/angularjs-toaster/toaster.js"></script>
+
+    <!-- ANGULAR CUSTOM -->
+    <script src="components/app.module.js"></script>
+    <script src="components/appRoutes.js"></script>
+
+    <script src="components/avatar/avatar.module.js"></script>
+    <script src="components/avatar/AvatarController.js"></script>
+    <script src="components/avatar/AvatarService.js"></script>
+
+    <script src="components/avatar/avatar-component/avatarComponentsDirective.js"></script>
+
+    <script src="components/mentors/Mentors.module.js"></script>
+    <script src="components/mentors/mentorsListDirective.js"></script>
+
+    <script src="components/mentor/Mentor.module.js"></script>
+    <script src="components/mentor/MentorService.js"></script>
+    <script src="components/mentor/MentorController.js"></script>
+
+    <script src="components/mentees/Mentees.module.js"></script>
+    <script src="components/mentees/MenteesService.js"></script>
+    <script src="components/mentees/menteesListDirective.js"></script>
+
+    <script src="components/mentee/Mentee.module.js"></script>
+    <script src="components/mentee/MenteeService.js"></script>
+    <script src="components/mentee/MenteeController.js"></script>
+
+    <script src="components/MainController.js"></script>
+    <script src="components/page-header/PageHeaderController.js"></script>
+
+    <script src="components/data-sync/dataSync.module.js"></script>
+    <script src="components/data-sync/DataSyncService.js"></script>
+
+    <script src="components/add-person/addPerson.module.js"></script>
+    <script src="components/add-person/AddPersonService.js"></script>
+    <script src="components/add-person/error-handling/ErrorHandlingController.js"></script>
+    <script src="components/add-person/error-handling/ErrorHandlingService.js"></script>
+    <script src="components/add-person/modal/modalAddPerson.module.js"></script>
+    <script src="components/add-person/modal/ModalInstanceController.js"></script>
+
+    <script src="components/registration/registration.module.js"></script>
+    <script src="components/registration/RegistrationService.js"></script>
+
+    <script src="components/registration/validation/loginValidationDirective.js"></script>
+
+    <script src="components/registration/modal/modalRegister.module.js"></script>
+    <script src="components/registration/modal/ModalInstanceRegisterController.js"></script>
+
+    <script src="components/voting/voting.module.js"></script>
+    <script src="components/voting/VotingService.js"></script>
+    <script src="components/voting/votingDirective.js"></script>
+
+    <script src="components/person/personDirective.js"></script>
+    <script src="components/person-list/personListHeaderDirective.js"></script>
+
+
+</head>
+<body ng-app="sampleApp">
+
+<div class="container">
+    <!-- HEADER -->
+    <nav ng-controller="PageHeaderController as header" class="navbar navbar-default">
+
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">M&Ms List</a>
+            </div>
+
+            <!-- show modal for adding persons -->
+            <button type="button"
+                    class="btn btn-default button-custom"
+                    ng-click="header.showModalToAddPerson('mentor')">
+                <span class="glyphicon glyphicon-plus"></span><span> Add mentor</span>
+            </button>
+            <button type="button"
+                    class="btn btn-default button-custom"
+                    ng-click="header.showModalToAddPerson('mentee')">
+                <span class="glyphicon glyphicon-plus"></span><span> Add mentee</span>
+            </button>
+
+            <button type="button"
+                    class="btn btn-default button-custom"
+                    ng-click="header.showModalToRegister()">
+                <span>Register</span>
+            </button>
+        </div>
+    </nav>
+
+    <div ng-controller="ErrorHandlingController as errorHandler">
+        <toaster-container
+                toaster-options="{
+                    'time-out': 3000,
+                    'close-button':false,
+                    'animation-class': 'toast-top-right'
+                  }">
+        </toaster-container>
+    </div>
+
+    <!-- ANGULAR DYNAMIC CONTENT -->
+    <div ng-view></div>
+
+</div>
+</body>
+</html>

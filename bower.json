@@ -1,0 +1,27 @@
+{
+  "name": "M_M_List_on_MEAN_stack",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "font-awesome": "latest",
+    "animate.css": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-mocks": "latest",
+    "angularjs-toaster": "~0.4.15"
+  },
+  "authors": [
+    "a-lysenko <aleksey.lysenko@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-bootstrap": "~0.13.2"
+  }
+}

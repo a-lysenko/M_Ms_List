@@ -1,0 +1,16 @@
+<div class="jumbotron text-center">
+
+    <person person-template-type="details"
+            person-obj-type="mentee"
+            person-obj="mentee"
+            >
+        <span class="col-sm-3"><strong>Mentor:</strong></span>
+        <select class="col-sm-4"
+                id="mentor-of-mentee"
+                ng-options="key as value for (key, value) in mentorsDesc"
+                ng-model="initialMentorId"
+                ng-change="updateMentorOfMentee(mentee._id, initialMentorId)"
+                >
+        </select>
+    </person>
+</div>

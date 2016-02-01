@@ -1,0 +1,89 @@
+
+<div class="modal-header">
+    <h3 class="modal-title">Register:</h3>
+</div>
+
+<div class="modal-body form-horizontal">
+    <form class="form-horizontal"
+          role="form"
+
+          novalidate
+          ng-model="registration.regData"
+          name="registrationForm">
+        <div class="form-group"
+             ng-class="{'has-error has-feedback': (registrationForm.$submitted || registrationForm.login.$dirty) &&
+                              registrationForm.login.$error.notUnique}">
+            <label class="control-label col-sm-2" for="login">Login:</label>
+
+            <div class="col-sm-10">
+                <input type="test"
+                       class="form-control"
+                       id="login"
+                       name="login"
+                       ng-model="registration.regData.login"
+                       ng-model-options="{ debounce: 500 }"
+                       ng-required="true"
+                       ng-unique-login
+                       placeholder="Enter login">
+                <p ng-if="(registrationForm.$submitted || registrationForm.login.$dirty) &&
+                              registrationForm.login.$error.notUnique"
+                   class="bg-danger text-danger">
+                    Login is not unique!
+                </p>
+                <p ng-if="(registrationForm.$submitted || registrationForm.login.$dirty) &&
+                              registrationForm.login.$error.required"
+                   class="bg-danger text-danger">
+                    Login required!
+                </p>
+            </div>
+        </div>
+        <div class="form-group"
+             ng-class="{'has-error has-feedback': (registrationForm.$submitted || registrationForm.name.$dirty) &&
+                              registrationForm.name.$error.required}">
+            <label class="control-label col-sm-2" for="name">Name:</label>
+
+            <div class="col-sm-10">
+                <input type="text"
+                       class="form-control"
+                       id="name"
+                       name="name"
+                       ng-model="registration.regData.name"
+                       ng-required="true"
+                       placeholder="Enter name">
+
+                <p ng-if="(registrationForm.$submitted || registrationForm.name.$dirty) &&
+                              registrationForm.name.$error.required"
+                   class="bg-danger text-danger">
+                    Name required!
+                </p>
+            </div>
+
+        </div>
+
+        <div class="form-group"
+             ng-class="{'has-error has-feedback': registrationForm.email.$invalid}">
+            <label class="control-label col-sm-2" for="email">Email:</label>
+
+            <div class="col-sm-10">
+                <input type="email"
+                       class="form-control"
+                       id="email"
+                       name="email"
+                       ng-model="registration.regData.email"
+                       ng-model-options="{ debounce: 500 }"
+                       ng-pattern="registration.emailValidationPattern"
+                       placeholder="Enter email">
+
+                <p ng-if="registrationForm.email.$invalid"
+                   class="bg-danger text-danger">
+                    Email has invalid format!
+                </p>
+            </div>
+        </div>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button type="submit" class="btn btn-primary" ng-click="registration.ok(registrationForm)">Register</button>
+    <button class="btn btn-warning" ng-click="registration.cancel()">Cancel</button>
+</div>

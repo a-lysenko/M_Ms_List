@@ -1,0 +1,39 @@
+<div class="container">
+    <h2 class="text-left">{{personCtrl.computedName()}}</h2>
+    <div class="col-sm-2">
+        <!--<img src="http://avatars.kards.qip.ru/images/avatar/94/67/92052_prev_98.jpg" height="100" alt="photo"/>-->
+        <img id="photo_{{personCtrl.personObj._id}}"
+             src="{{personCtrl.loadSpinnerURL}}" height="100" alt="photo"/>
+    </div>
+    <div class="col-sm-8">
+        <div class="text-left">
+            <button type="button"
+                    class="btn btn-primary button-avatar"
+                    ng-click="personCtrl.showModalToCreateAvatar()">
+                <span>Create avatar</span>
+            </button>
+        </div>
+        <input type="text"
+               placeholder="{{personCtrl.photoPlaceholder}}"
+               class="col-sm-10"
+               ng-model="personCtrl.photoURL"
+               ng-model-options="{ debounce: 1000 }"
+               ng-change="personCtrl.changePhotoURL()"
+                />
+    </div>
+
+    <table class="table">
+        <tbody>
+            <tr class="info" ng-repeat="(key, value) in personCtrl.infos" ng-if="personCtrl.personObj[key]">
+                <th>{{value}}:</th>
+                <td>{{personCtrl.personObj[key]}}</td>
+            </tr>
+
+            <tr class="warning">
+                <td colspan="2">
+                    <ng-transclude></ng-transclude>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,26 @@
+<div>
+    <button type="button"
+            class="btn btn-default btn-circle"
+            name="up"
+            ng-click="votingCtrl.voteUp(); $event.preventDefault()">
+        <i class="glyphicon glyphicon-arrow-up"></i>
+    </button>
+
+    <h4>
+        <span class="label"
+              ng-class="{'label-default': votingCtrl.votes === 0,
+                         'label-success': votingCtrl.votes > 0,
+                         'label-danger': votingCtrl.votes < 0
+                         }"
+              ng-click="$event.preventDefault()">
+            {{votingCtrl.votes}}
+        </span>
+    </h4>
+
+    <button type="button"
+            class="btn btn-default btn-circle"
+            name="down"
+            ng-click="votingCtrl.voteDown(); $event.preventDefault()">
+        <i class="glyphicon glyphicon-arrow-down"></i>
+    </button>
+</div>

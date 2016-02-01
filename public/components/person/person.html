@@ -1,0 +1,16 @@
+<a href="{{personCtrl.mLinkGroup}}/{{personCtrl.personObj._id}}"
+   class="list-group-item row">
+
+    <div class="col-sm-2">
+        <img id="photo_{{personCtrl.personObj._id}}"
+             class="img-block"
+             src="{{personCtrl.loadSpinnerURL}}" height="60" alt="photo"/>
+    </div>
+    <div class="col-sm-4">
+        {{ personCtrl.personObj.name }} {{ personCtrl.personObj.surname }}
+    </div>
+    <div class="col-sm-6">
+        <ng-transclude></ng-transclude>
+    </div>
+
+</a>
